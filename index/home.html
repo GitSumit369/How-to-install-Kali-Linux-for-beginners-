@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Information to Install Kali Linux</title>
+    <style>
+        /*=========================================
+        CYBERSUMIT CYBERSECURITY THEME
+=========================================*/
+
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+
+            font-family: 'Poppins', sans-serif;
+            color: #ffffff;
+
+            background:
+                radial-gradient(circle at 20% 20%, rgba(0, 255, 136, .18), transparent 30%),
+                radial-gradient(circle at 80% 80%, rgba(0, 200, 255, .12), transparent 30%),
+                linear-gradient(135deg, #05070f, #0a1018, #05070f);
+
+            min-height: 100vh;
+
+            overflow-x: hidden;
+
+            position: relative;
+
+        }
+
+        /* Cyber Grid */
+
+        body::before {
+
+            content: "";
+
+            position: fixed;
+
+            inset: 0;
+
+            background-image:
+
+                linear-gradient(rgba(0, 255, 136, .06) 1px, transparent 1px),
+
+                linear-gradient(90deg, rgba(0, 255, 136, .06) 1px, transparent 1px);
+
+            background-size: 45px 45px;
+
+            z-index: -2;
+
+        }
+
+        /* Neon Glow */
+
+        body::after {
+
+            content: "";
+
+            position: fixed;
+
+            width: 450px;
+
+            height: 450px;
+
+            background: #00ff88;
+
+            border-radius: 50%;
+
+            filter: blur(180px);
+
+            opacity: .08;
+
+            top: -120px;
+
+            right: -120px;
+
+            z-index: -3;
+
+        }
+
+        /*================ MAIN CARD ================*/
+
+        main {
+
+            width: 90%;
+
+            max-width: 1000px;
+
+            margin: 60px auto;
+
+            padding: 45px;
+
+            background: rgba(20, 20, 30, .78);
+
+            backdrop-filter: blur(15px);
+
+            border: 1px solid rgba(0, 255, 136, .25);
+
+            border-radius: 18px;
+
+            box-shadow:
+
+                0 0 25px rgba(0, 255, 136, .12),
+
+                0 0 60px rgba(0, 255, 136, .05);
+
+        }
+
+        /*================ TITLES ================*/
+
+        h1 {
+
+            font-family: 'Orbitron', sans-serif;
+
+            text-align: center;
+
+            font-size: 45px;
+
+            color: #00ff88;
+
+            margin-bottom: 20px;
+
+            text-shadow:
+
+                0 0 8px #00ff88,
+
+                0 0 20px #00ff88,
+
+                0 0 40px #00ff88;
+
+        }
+
+        h2 {
+
+            margin-top: 35px;
+
+            margin-bottom: 18px;
+
+            color: #00d9ff;
+
+            border-left: 5px solid #00ff88;
+
+            padding-left: 15px;
+
+        }
+
+        h3 {
+
+            color: #ffcc00;
+
+            margin-bottom: 12px;
+
+        }
+
+        /*================ TEXT ================*/
+
+        p {
+
+            color: #d8d8d8;
+
+            line-height: 1.8;
+
+            margin-bottom: 18px;
+
+        }
+
+        strong {
+
+            color: #00ff88;
+
+        }
+
+        /*================ LISTS ================*/
+
+        ul,
+        ol {
+
+            margin-left: 30px;
+
+        }
+
+        li {
+
+            margin-bottom: 18px;
+
+            line-height: 1.8;
+
+            color: #eeeeee;
+
+        }
+
+        li::marker {
+
+            color: #00ff88;
+
+            font-weight: bold;
+
+        }
+
+        /*================ WARNING ================*/
+
+        .warning {
+
+            margin: 35px 0;
+
+            padding: 20px;
+
+            border-left: 5px solid orange;
+
+            background: rgba(255, 170, 0, .08);
+
+            border-radius: 12px;
+
+            box-shadow:
+
+                0 0 12px rgba(255, 170, 0, .15);
+
+        }
+
+        /*================ LINKS ================*/
+
+        a {
+
+            color: #00d9ff;
+
+            text-decoration: none;
+
+            transition: .3s;
+
+            font-weight: 600;
+
+        }
+
+        a:hover {
+
+            color: #00ff88;
+
+            text-shadow:
+
+                0 0 8px #00ff88;
+
+        }
+
+        /*================ HR ================*/
+
+        hr {
+
+            width: 85%;
+
+            margin: 40px auto;
+
+            border: none;
+
+            border-top: 1px solid rgba(255, 255, 255, .15);
+
+        }
+
+        /*================ FOOTER ================*/
+
+        footer {
+
+            width: 100%;
+
+            padding: 30px;
+
+            text-align: center;
+
+            background: #070b12;
+
+            border-top: 1px solid rgba(0, 255, 136, .2);
+
+        }
+
+        footer p {
+
+            color: #cccccc;
+
+        }
+
+        /*================ SCROLLBAR ================*/
+
+        ::-webkit-scrollbar {
+
+            width: 10px;
+
+        }
+
+        ::-webkit-scrollbar-track {
+
+            background: #111;
+
+        }
+
+        ::-webkit-scrollbar-thumb {
+
+            background: #00ff88;
+
+            border-radius: 20px;
+
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+
+            background: #00d977;
+
+        }
+
+        /*================ RESPONSIVE ================*/
+
+        @media(max-width:768px) {
+
+            main {
+
+                width: 95%;
+
+                padding: 25px;
+
+            }
+
+            h1 {
+
+                font-size: 30px;
+
+            }
+
+            h2 {
+
+                font-size: 22px;
+
+            }
+
+            body {
+
+                font-size: 15px;
+
+            }
+
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+    <main class="guide-container">
+
+        <h1>How to Install Kali Linux</h1>
+
+        <h2>Step-by-Step Guide</h2>
+
+        <p><strong>For Dual Boot Installation</strong></p>
+
+        <!-- Following are the steps to install Kali Linux -->
+        <h2>Requirements</h2>
+
+        <ul>
+            <li>64-bit Computer</li>
+            <li>Minimum 4 GB RAM (8 GB Recommended)</li>
+            <li>40 GB Free Disk Space</li>
+            <li>8 GB USB Drive</li>
+            <li>Stable Internet Connection</li>
+            <li>Windows 10 or Windows 11 (for Dual Boot)</li>
+        </ul>
+        <div class="warning">
+            <h3>⚠️ Warning</h3>
+            <p>
+                Always back up your important files before installing Kali Linux.
+                Incorrect partition selection may result in data loss.
+            </p>
+        </div>
+
+        <ol>
+            <li>
+                Check your device compatibility first. Right-click on <strong>This PC</strong>, select
+                <strong>Properties</strong>, and check your RAM and whether your system is 32-bit or 64-bit.
+            </li>
+
+            <li>
+                Create at least <strong>40 GB</strong> of free (unallocated) disk space for Kali Linux. For detailed
+                instructions..
+                <a href="create-partition.html">Click here to learn how to create a partition.</a>
+            </li>
+
+            <li>
+                A USB flash drive with a minimum capacity of <strong>8 GB</strong> is required.
+            </li>
+
+            <li>
+                Download the Kali Linux Installer by clicking here:
+                <a href="https://www.kali.org" target="_blank" rel="noopener noreferrer">kali.org</a>
+            </li>
+
+            <li>
+                Download Rufus by clicking here:
+                <a href="https://rufus.ie" target="_blank" rel="noopener noreferrer">rufus installer</a>
+            </li>
+
+            <li>
+                After downloading, open Rufus, allow administrator permission, select the Kali Linux ISO file, click
+                <strong>Start</strong>, and accept all prompts.
+            </li>
+
+            <li>
+                Once the process is complete, close all windows, restart your computer, and press <strong>F12</strong>
+                (or your computer's boot key) to boot from the USB drive.
+            </li>
+
+            <li>
+                Select <strong>English</strong> as the language and <strong>India</strong> as the region.
+            </li>
+
+            <li>
+                <strong>Very Important:</strong> Choose the <strong>Manual</strong> partition option, select the
+                <strong>40 GB</strong> free space, verify it carefully, and continue with the installation.
+            </li>
+        </ol>
+
+    </main>
+
+    <hr>
+
+    <footer>
+
+        <p>&copy; 2026 CYBERSUMIT. All Rights Reserved.</p>
+
+    </footer>
+
+</body>
+
+
+</html>

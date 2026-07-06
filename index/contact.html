@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - CYBERSUMIT</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Poppins:wght@300;400;500&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+
+            font-family: 'Poppins', sans-serif;
+
+            background:
+                radial-gradient(circle at top left, #00ff8830, transparent 30%),
+                linear-gradient(135deg, #05070f, #0d1117, #05070f);
+
+            color: white;
+
+            min-height: 100vh;
+
+        }
+
+        header {
+
+            background: #0b111c;
+
+            padding: 20px;
+
+            text-align: center;
+
+            border-bottom: 2px solid #00ff88;
+
+        }
+
+        header h1 {
+
+            font-family: 'Orbitron', sans-serif;
+
+            color: #00ff88;
+
+        }
+
+        main {
+
+            width: 90%;
+
+            max-width: 700px;
+
+            margin: 50px auto;
+
+            padding: 40px;
+
+            background: rgba(255, 255, 255, .04);
+
+            backdrop-filter: blur(10px);
+
+            border-radius: 15px;
+
+            border: 1px solid rgba(0, 255, 136, .2);
+
+        }
+
+        label {
+
+            display: block;
+
+            margin-top: 20px;
+
+            margin-bottom: 8px;
+
+        }
+
+        input,
+        textarea {
+
+            width: 100%;
+
+            padding: 12px;
+
+            border: none;
+
+            border-radius: 8px;
+
+            background: #1b1f27;
+
+            color: white;
+
+        }
+
+        textarea {
+
+            height: 150px;
+
+            resize: none;
+
+        }
+
+        button {
+
+            margin-top: 25px;
+
+            padding: 12px 30px;
+
+            background: #00ff88;
+
+            border: none;
+
+            border-radius: 8px;
+
+            font-size: 16px;
+
+            cursor: pointer;
+
+            font-weight: bold;
+
+        }
+
+        button:hover {
+
+            background: #00d977;
+
+        }
+
+        footer {
+
+            text-align: center;
+
+            padding: 20px;
+
+            margin-top: 40px;
+
+            border-top: 1px solid #00ff88;
+
+        }
+
+        #status {
+
+            margin-top: 20px;
+
+            font-size: 18px;
+
+            font-weight: bold;
+
+            text-align: center;
+
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <header>
+
+        <h1>Contact CYBERSUMIT</h1>
+
+    </header>
+
+    <main>
+
+        <form id="contactForm">
+
+            <label>Full Name</label>
+
+            <input type="text" id="name" placeholder="Enter your name">
+
+            <label>Email Address</label>
+
+            <input type="email" id="email" placeholder="Enter your email">
+
+            <label>Your Message</label>
+
+            <textarea id="message" placeholder="Describe your problem..."></textarea>
+
+            <button type="submit" id="sendBtn">
+                Send Message
+            </button>
+
+        </form>
+
+    </main>
+
+    <footer>
+
+        <p id="status">© 2026 CYBERSUMIT</p>
+
+    </footer>
+
+    <script>
+
+        const form = document.getElementById("contactForm");
+
+        const status = document.getElementById("status");
+
+        form.addEventListener("submit", function (event) {
+
+            event.preventDefault();
+
+            const name = document.getElementById("name").value.trim();
+
+            const email = document.getElementById("email").value.trim();
+
+            const message = document.getElementById("message").value.trim();
+
+            if (name === "" || email === "" || message === "") {
+
+                status.style.color = "red";
+
+                status.innerHTML = "⚠ Please fill in all fields.";
+
+                return;
+
+            }
+
+            const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+
+            if (!email.match(emailPattern)) {
+
+                status.style.color = "orange";
+
+                status.innerHTML = "⚠ Please enter a valid email address.";
+
+                return;
+
+            }
+
+            status.style.color = "#00ff88";
+
+            status.innerHTML = "✅ Message sent successfully!";
+
+            form.reset();
+            const button = document.getElementById("sendBtn");
+
+            form.addEventListener("submit", function (event) {
+
+                event.preventDefault();
+
+                button.innerHTML = "Sending...";
+
+                button.disabled = true;
+
+                setTimeout(function () {
+
+                    button.innerHTML = "✓ Message Sent";
+
+                    button.style.background = "#00ff88";
+
+                    form.reset();
+
+                    status.style.color = "#00ff88";
+                    status.innerHTML = "Thank you for contacting CYBERSUMIT.";
+
+                }, 2000);
+
+            });
+
+    </script>
+
+</body>
+
+</html>
