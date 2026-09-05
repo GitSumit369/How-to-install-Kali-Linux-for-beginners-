@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="img.jfif">
+    <title>Information to Install Kali Linux</title>
+   <style>
+
+/* Base Cyberpunk Setup */
+body {
+    background: #06090e url('background.jpeg') no-repeat fixed center / cover;
+    color: #33ff33;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+/* Screen Scanline CRT Monitor Filter */
+body::before {
+    content: " ";
+    display: block;
+    position: fixed;
+    top: 0; left: 0; bottom: 0; right: 0;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%);
+    z-index: 9999;
+    background-size: 100% 4px;
+    pointer-events: none;
+}
+
+/* Fixed Header Navbar Layout */
+header {
+    background: rgba(10, 14, 20, 0.95);
+    backdrop-filter: blur(8px);
+    border-bottom: 2px solid #00ff00;
+    padding: 12px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.logo-container img {
+    height: 45px;
+    width: auto;
+    border: 1px solid #00ff00;
+    border-radius: 4px;
+    box-shadow: 0 0 8px rgba(0, 255, 0, 0.4);
+    display: block;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: #33ffff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.95rem;
+    letter-spacing: 1px;
+    padding: 6px 10px;
+    transition: all 0.2s ease-in-out;
+    border-bottom: 2px solid transparent;
+}
+
+.nav-links a:hover {
+    color: #00ff00;
+    border-bottom-color: #00ff00;
+    text-shadow: 0 0 8px rgba(0, 255, 0, 0.6);
+}
+
+/* Right-Pinned Mobile Hamburger Toggle Switch Layout */
+.menu-toggle {
+    display: none; /* Auto-hidden on wide desktop monitors */
+    flex-direction: column;
+    justify-content: space-between;
+    width: 24px;
+    height: 18px;
+    background: rgba(0, 255, 0, 0.1);
+    border: 1px solid rgba(0, 255, 0, 0.3);
+    border-radius: 6px;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1001;
+    margin-left: auto;
+}
+
+.menu-toggle .bar {
+    width: 100%;
+    height: 2px;
+    background-color: #00ff00;
+    box-shadow: 0 0 5px rgba(0, 255, 0, 0.8);
+    transition: all 0.3s ease;
+}
+
+/* Core Main Application Window Frame */
+main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.hero {
+    max-width: 650px;
+    width: 100%;
+    background: rgba(8, 12, 18, 0.85);
+    backdrop-filter: blur(5px);
+    border: 1px solid #00ff00;
+    border-radius: 8px;
+    padding: 40px 30px;
+    box-sizing: border-box;
+    text-align: center;
+    box-shadow: 0 0 30px rgba(0, 255, 0, 0.15);
+}
+
+/* Your Original Bright Red Heading Styles */
+.hero h1 {
+    color: #ff3333; 
+    font-size: 2.8rem;
+    margin: 0 0 10px 0;
+    letter-spacing: 5px;
+    text-shadow: 0 0 15px rgba(255, 51, 51, 0.6);
+    font-weight: bold;
+}
+
+.hero h2 {
+    color: #00ff00;
+    font-size: 1.25rem;
+    margin: 0 0 20px 0;
+    text-transform: uppercase;
+}
+
+.hero p {
+    color: #a0aec0;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin: 0 0 30px 0;
+    border-top: 1px dashed rgba(0, 255, 0, 0.2);
+    border-bottom: 1px dashed rgba(0, 255, 0, 0.2);
+    padding: 15px 0;
+}
+
+.buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn, .btn2 {
+    display: inline-block;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9rem;
+    padding: 12px 24px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    transition: all 0.25s ease;
+    min-width: 160px;
+    box-sizing: border-box;
+}
+
+.btn {
+    background-color: #00ff00;
+    color: #06090e;
+    border: 1px solid #00ff00;
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.3);
+}
+
+.btn:hover {
+    background-color: transparent;
+    color: #00ff00;
+}
+
+.btn2 {
+    background-color: transparent;
+    color: #33ffff;
+    border: 1px solid #33ffff;
+}
+
+.btn2:hover {
+    background-color: #33ffff;
+    color: #06090e;
+}
+
+footer {
+    background: rgba(5, 7, 10, 0.95);
+    border-top: 1px solid rgba(0, 255, 0, 0.3);
+    text-align: center;
+    padding: 15px;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+/* ANDROID MOBILE DEVICE ORIENTATION BREAKPOINTS */
+@media (max-width: 768px) {
+    header {
+        padding: 12px 15px;
+    }
+
+    /* Reveals the right-aligned mobile menu key trigger */
+    .menu-toggle {
+        display: flex;
+    }
+
+    /* Fixed window sizing rules ensure no text gets hidden under the open panel */
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: fixed; 
+        top: 71px; 
+        left: 0;
+        width: 100%;
+        height: calc(100vh - 71px); 
+        background: rgba(6, 9, 14, 0.98); 
+        z-index: 999; 
+        padding: 40px 0;
+        gap: 25px;
+        text-align: center;
+        box-sizing: border-box;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 15px 0;
+        font-size: 1.3rem;
+        width: 100%;
+    }
+
+    /* Transforms into an X symbol when tapped open */
+    .menu-toggle.active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    .menu-toggle.active .bar:nth-child(2) { opacity: 0; }
+    .menu-toggle.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+    /* Elastic layout scaling to run perfectly on Android glass displays */
+    main { padding: 15px; }
+    .hero { padding: 30px 15px; }
+    .hero h1 { font-size: 2.2rem; }
+    .hero h2 { font-size: 1rem; }
+    .hero p { font-size: 0.85rem; }
+    .buttons { flex-direction: column; width: 100%; }
+    .btn, .btn2 { width: 100%; text-align: center; }
+}
+	</style>
+</head>
+<body>
+
+    <!-- Responsive Navbar Header Frame -->
+    <header>
+        <div class="logo-container">
+           <a href="#">
+                <img src="img.jfif" alt="CYBERSUMIT Logo">
+            </a>
+        </div>
+
+        <nav class="navbar">
+            <!-- Hamburger button locked to the right side on Android -->
+            <button class="menu-toggle" id="mobile-menu" aria-label="Toggle navigation">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <div class="nav-links" id="nav-menu">
+                <a href="home.html">Home</a>
+                <a href="guide.html">Videos/Guide</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Workspace Container -->
+    <main>
+        <div class="hero">
+            <!-- Your Exact Original Content Restored -->
+            <h1>CYBERSUMIT</h1>
+            <h2>Learn Ethical Hacking & Cyber Security</h2>
+            <p>
+                Free Kali Linux Guides,
+                Linux Commands,
+                Networking,
+                Ethical Hacking,
+                Penetration Testing
+            </p>
+            <div class="buttons">
+                <a href="home.html" class="btn">Get Started</a>
+                <a href="https://youtube.com" target="_blank" class="btn2">Watch Videos</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Original Footer Block -->
+    <footer>
+        <p>&copy; 2026 CYBERSUMIT. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Interactive Navigation Menu Click Script -->
+    <script>
+        const mobileMenuBtn = document.getElementById('mobile-menu');
+        const navMenuContainer = document.getElementById('nav-menu');
+
+        // Toggle state triggers on click
+        mobileMenuBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            this.classList.toggle('active');
+            navMenuContainer.classList.toggle('active');
+        });
+
+        // Auto-closes overlay drawer if a choice is tapped
+        const links = document.querySelectorAll('.nav-links a');
+        links.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenuBtn.classList.remove('active');
+                navMenuContainer.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>
